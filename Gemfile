@@ -37,6 +37,8 @@ gem 'bcrypt'
 
 gem 'figaro', '1.0'
 
+gem 'devise'
+
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'pry-rails'
