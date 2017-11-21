@@ -5,13 +5,17 @@
        <div class="media">
          <div class="media-body">
            <h4 class="media-heading">
-             <%= link_to tale.title, tale %>
+             <%= link_to tale.title, genre_tale_path(@genre, tale) %>
            </h4>
+           <small>
+             submitted <%= time_ago_in_words(tale.created_at) %> ago <br>
+             <%= tale.comments.count %> Comments
+           </small>
          </div>
        </div>
      <% end %>
    </div>
    <div class="col-md-4">
-     <%= link_to "New Story", new_tale_path(@genre), class: 'btn btn-success' %>
+     <%= link_to "New Story", new_genre_tale_path(@genre), class: 'btn btn-success' %>
    </div>
  </div>

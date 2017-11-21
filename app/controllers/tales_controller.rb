@@ -1,13 +1,11 @@
 class TalesController < ApplicationController
-  def index
-    @tales = Tale.all
-  end
 
   def show
     @tale = Tale.find(params[:id])
   end
 
   def new
+    @genre = Genre.find(params[:genre_id])
     @tale = Tale.new
   end
 
@@ -15,9 +13,12 @@ class TalesController < ApplicationController
     @tale = Tale.new
     @tale.title = params[:tale][:title]
     @tale.body = params[:tale][:body]
+    @genre = Genre.find(params[:genre_id])
+ # #35
+     @tale.genre = @genre
     if @tale.save
        flash[:notice] = "Your story was saved.  Thank you for sharing it with the world."
-       redirect_to @tale
+       redirect_to [@genre, @tale]
     else
        flash.now[:alert] = "There was an error saving your story.  Please try again later.  If the problem persists, please notify tech support at ijsimon@sbcglobal.net."
        render :new
@@ -35,7 +36,7 @@ class TalesController < ApplicationController
  
      if @tale.save
        flash[:notice] = "Your story was updated.  Thank you for updating it."
-       redirect_to @tale
+       redirect_to [@tale.genre, @tale]
      else
        flash.now[:alert] = "There was an error updating your story.  Please try again later.  If the problem persists, please notify tech support at ijsimon@sbcglobal.net."
        render :edit
@@ -46,7 +47,7 @@ class TalesController < ApplicationController
      @tale = Tale.find(params[:id])
       if @tale.destroy
        flash[:notice] = "\"#{@tale.title}\" was deleted successfully."
-       redirect_to tales_path
+       redirect_to @tale.genre
      else
        flash.now[:alert] = "There was an error deleting your story."
        render :show
