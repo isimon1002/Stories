@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :welcome
   resources :tales
+  resources :genres, only: [:index, :show]
   get 'about' => 'welcome#about'
   root 'welcome#index'
 

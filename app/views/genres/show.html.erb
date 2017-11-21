@@ -1,0 +1,17 @@
+ <h1><%= @genre.name %></h1>
+  <div class="row">
+   <div class="col-md-8">
+     <% @genre.tales.each do |tale| %>
+       <div class="media">
+         <div class="media-body">
+           <h4 class="media-heading">
+             <%= link_to tale.title, tale %>
+           </h4>
+         </div>
+       </div>
+     <% end %>
+   </div>
+   <div class="col-md-4">
+     <%= link_to "New Story", new_tale_path(@genre), class: 'btn btn-success' %>
+   </div>
+ </div>

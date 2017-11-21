@@ -1,0 +1,30 @@
+=> [[32m#<Genre:0x00000005b78bd0[0m
+  id: [1;34m1[0m,
+  name: [32m"Yhmfcsjw xrk gxp srvnedg hpktfdsx ulqrabhm."[0m[0m,
+  public: [1;36mtrue[0m,
+  description:
+   [32m"Wbpmuyfo zjwsepvf zkcimre yatlbmds. Dpqb fkv ageljrh anmhydt txib. Demtg ctosfpne ljbsqxoh linjvq vuc. Bpqj dqfj omi qgnietch ghztviem wuszdp jzirb cylumndw. Ihtoqwlu zltqb hngwot. Mxyfsaqg kcj ocgyi floemiw whxgv."[0m[0m,
+  created_at: [1;34;4mMon[0m, [1;34m20[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m19[0m:[1;34m34[0m:[1;34m47[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mMon[0m, [1;34m20[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m19[0m:[1;34m34[0m:[1;34m47[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Genre:0x00000005b78a90[0m
+  id: [1;34m2[0m,
+  name: [32m"Mtaxqrkh nvpmckd rovxfc kbmf mwkrv gmzfer."[0m[0m,
+  public: [1;36mtrue[0m,
+  description:
+   [32m"Gbejndkz vbwxq hkgd eynxdtm. Ndx prxlq bocdw lkdgr. Qtr dkt loya mgcao. Nodrghax qdvpfs ptv rmh wktqghn. Aksb oarwkgnd ndxkgr jmtq."[0m[0m,
+  created_at: [1;34;4mMon[0m, [1;34m20[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m19[0m:[1;34m34[0m:[1;34m47[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mMon[0m, [1;34m20[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m19[0m:[1;34m34[0m:[1;34m47[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Genre:0x00000005b78950[0m
+  id: [1;34m3[0m,
+  name: [32m"Horror"[0m[0m,
+  public: [1;36mtrue[0m,
+  description: [32m"Stories that scare the reader."[0m[0m,
+  created_at: [1;34;4mMon[0m, [1;34m20[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m22[0m:[1;34m41[0m:[1;34m28[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mMon[0m, [1;34m20[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m22[0m:[1;34m41[0m:[1;34m28[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m,
+ [32m#<Genre:0x00000005b787c0[0m
+  id: [1;34m4[0m,
+  name: [32m"Comedy"[0m[0m,
+  public: [1;36mtrue[0m,
+  description: [32m"Funny stories."[0m[0m,
+  created_at: [1;34;4mMon[0m, [1;34m20[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m22[0m:[1;34m52[0m:[1;34m18[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mMon[0m, [1;34m20[0m [1;34;4mNov[0m [1;34m2017[0m [1;34m22[0m:[1;34m52[0m:[1;34m18[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m[32m>[0m]
