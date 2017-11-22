@@ -1,0 +1,22 @@
+     <%= form_for [genre, tale] do |f| %>
+       <% if tale.errors.any? %>
+         <div class="alert alert-danger">
+           <h4><%= pluralize(tale.errors.count, "error") %>.</h4>
+           <ul>
+             <% tale.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+             <% end %>
+           </ul>
+         </div>
+      <% end %>
+      <%= form_group_tag(tale.errors[:title]) do %>
+         <%= f.label :title %>
+         <%= f.text_field :title, class: 'form-control', placeholder: "Enter story title" %>
+      <% end %>
+      <%= form_group_tag(tale.errors[:body]) do %>
+         <%= f.label :body %>
+         <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter story" %>
+      <% end %>
+         <%= f.submit "Save", class: 'btn btn-success' %>
+       </div>
+     <% end %>
