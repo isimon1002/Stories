@@ -16,8 +16,12 @@ class TalesController < ApplicationController
     @genre = Genre.find(params[:genre_id])
  # #35
      @tale.genre = @genre
+     if WordsCounted.count(@tale.body).token_count > 999
+         @tale.isPublic = true
+     end
     if @tale.save
        flash[:notice] = "Your story was saved.  Thank you for sharing it with the world."
+       
        redirect_to [@genre, @tale]
     else
        flash.now[:alert] = "There was an error saving your story.  Please try again later.  If the problem persists, please notify tech support at ijsimon@sbcglobal.net."
@@ -33,7 +37,13 @@ class TalesController < ApplicationController
      @tale = Tale.find(params[:id])
      @tale.title = params[:tale][:title]
      @tale.body = params[:tale][:body]
- 
+     
+     if WordsCounted.count(@tale.body).token_count > 999
+         @tale.isPublic = true
+     end
+     if WordsCounted.count(@tale.body).token_count < 999
+         @tale.isPublic = false
+     end
      if @tale.save
        flash[:notice] = "Your story was updated.  Thank you for updating it."
        redirect_to [@tale.genre, @tale]
