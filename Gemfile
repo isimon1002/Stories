@@ -39,6 +39,9 @@ gem 'figaro', '1.0'
 
 gem 'devise'
 
+gem 'words_counted'
+
+
 group :development do
   gem 'listen', '~> 3.0.5'
   gem 'pry-rails'
