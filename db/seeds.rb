@@ -1,6 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
+
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
@@ -26,27 +27,6 @@ Genre.create!(name: 'Tragedy', description: ' Sad stories, or stories with sad e
 end
 genres = Genre.all
 
- # Create Tales
- 15.times do
- # #1
-   Tale.create!(
- # #2
-     genre:  genres.sample,
-     title:  RandomData.random_sentence,
-     body:   RandomData.random_paragraph
-   )
- end
- tales = Tale.all
- 
- # Create Comments
- # #3
- 30.times do
-   Comment.create!(
- # #4
-     tale: tales.sample,
-     body: RandomData.random_paragraph
-   )
- end
  
  puts "Seed finished"
  puts "#{Genre.count} genres created"
