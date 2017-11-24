@@ -9,6 +9,17 @@
 
  require 'random_data'
  
+  # Create Users
+ 5.times do
+   User.create!(
+ # #3
+   name:     RandomData.random_name,
+   email:    RandomData.random_email,
+   password: RandomData.random_sentence
+   )
+ end
+ users = User.all
+ 
   # Create Genre
 1.times  do
 Genre.create!(name: 'Comedy', description: 'Funny stories.')
@@ -27,8 +38,20 @@ Genre.create!(name: 'Tragedy', description: ' Sad stories, or stories with sad e
 end
 genres = Genre.all
 
+ # Create Stories
+ 25.times do
+   Tale.create!(
+     user:   users.sample,
+     topic:  topics.sample,
+     title:  Faker::Lorem.sentence,
+     body:   Faker::Lorem.paragraph
+   )
+ end
+ tales = Tale.all
+
  
  puts "Seed finished"
+ puts "#{User.count} users created"
  puts "#{Genre.count} genres created"
  puts "#{Tale.count} stories created"
  puts "#{Comment.count} comments created"

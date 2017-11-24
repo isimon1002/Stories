@@ -1,5 +1,7 @@
 class TalesController < ApplicationController
 
+before_action :authenticate_user!, except: :show
+
   def show
     @tale = Tale.find(params[:id])
   end
@@ -13,6 +15,7 @@ class TalesController < ApplicationController
     @tale = Tale.new
     @tale.title = params[:tale][:title]
     @tale.body = params[:tale][:body]
+    @tale.user = current_user
     @genre = Genre.find(params[:genre_id])
  # #35
      @tale.genre = @genre
