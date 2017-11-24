@@ -1,2 +1,29 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+ <div class="jumbotron">
+   <h1>Story Time</h1>
+   <p>The best place on the internet to read and share stories!</p>
+   <p>
+       <% if user_signed_in? %>
+           Thank you for signing in <%= current_user.name %>!
+       <% else %>
+
+           <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> -
+           <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
+      <% end %> 
+   </p>
+ </div>
+
+   <h1 class="middle">The beginning of three amazing stories.  Click on the link to read the rest.</h1>
+ <div class="row">
+   <div class="col-md-4">
+     <h3>Story X by Y</h3>
+     <p>Story X <%= link_to "Continue", genre_tale_path(1, 10), :class => 'navbar-link'  %></p>
+   </div>
+   <div class="col-md-4">
+     <h3>Story Y by Z</h3>
+     <p>Story Y  <%= link_to "Continue", genre_tale_path(2, 2), :class => 'navbar-link'  %></p>
+   </div>
+   <div class="col-md-4">
+     <h3>Story Z by A</h3>
+     <p>Story Z  <%= link_to "Continue", genre_tale_path(3, 8), :class => 'navbar-link'  %></p>
+   </div>
+ </div>
