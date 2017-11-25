@@ -17,6 +17,12 @@
          <%= f.label :body %>
          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter story" %>
       <% end %>
+      <% if tale.isPublic == true %>
+      <%= form_group_tag(tale.errors[:isPublic]) do %>
+         <%= f.label 'Make your story public' %>
+         <%= f.check_box :isPublic, class: 'checkbox' %>
+         <% end %>
+        <% end %>
          <%= f.submit "Save", class: 'btn btn-success' %>
        </div>
      <% end %>
