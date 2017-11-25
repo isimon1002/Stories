@@ -42,9 +42,9 @@ genres = Genre.all
  25.times do
    Tale.create!(
      user:   users.sample,
-     topic:  topics.sample,
-     title:  Faker::Lorem.sentence,
-     body:   Faker::Lorem.paragraph
+     genre:  genres.sample,
+     title:  RandomData.random_sentence,
+     body:   RandomData.random_sentence + RandomData.random_sentence
    )
  end
  tales = Tale.all

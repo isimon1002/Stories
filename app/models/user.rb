@@ -5,7 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
          
   has_many :tales, dependent: :destroy
+  
+  before_save { self.role ||= :standard }
+  
   validates :name, length: { minimum: 1, maximum: 100 }, presence: true
+  
+  enum role: [:standard, :author, :admin]
   
    def avatar_url(user)
      gravatar_id = Digest::MD5::hexdigest(user.email).downcase

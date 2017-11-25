@@ -1,7 +1,9 @@
 class TalesController < ApplicationController
-
-before_action :authenticate_user!, except: :show
-
+  
+  before_action :user_nil, except: :show
+  before_action :authorize_edit, except: [:show, :new, :create]
+  before_action :authorize_new, except: [:show, :edit]
+  
   def show
     @tale = Tale.find(params[:id])
   end
@@ -66,4 +68,31 @@ before_action :authenticate_user!, except: :show
        render :show
       end
   end
+  
+  private
+   def authorize_edit
+       tale = Tale.find(params[:id])
+ # #11
+     unless current_user == tale.user
+       flash[:alert] = "You must be the author of a story to edit it."
+       redirect_to [tale.genre, tale]
+     end
+   end
+   
+   def authorize_new
+     @genre = Genre.find(params[:genre_id])
+     @tale = Tale.new
+     
+     unless current_user.author? || current_user.admin?
+       flash[:alert] = "You must be an author to write new stories.  Please see the about section for how to become an author."
+       redirect_to genres_path
+     end
+   end
+   
+   def user_nil
+       if current_user == nil
+       flash[:alert] = "You must be signed in to create content."
+       redirect_to genres_path
+       end
+   end
 end
