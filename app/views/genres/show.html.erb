@@ -15,7 +15,9 @@
        </div>
      <% end %>
    </div>
+   <% if current_user.author? %>
    <div class="col-md-4">
      <%= link_to "New Story", new_genre_tale_path(@genre), class: 'btn btn-success' %>
    </div>
+   <% end %>
  </div>
