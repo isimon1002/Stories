@@ -49,6 +49,14 @@ genres = Genre.all
  end
  tales = Tale.all
 
+ # Create Comments
+ 50.times do
+   Comment.create!(
+     user: users.sample,
+     tale: tales.sample,
+     body: RandomData.random_paragraph
+   )
+  end
  
  puts "Seed finished"
  puts "#{User.count} users created"

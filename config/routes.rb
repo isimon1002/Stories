@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :genres, only: [:index, :show] do
       resources :tales, except: [:index]
     end
+  resources :tales, only: [] do
+     resources :comments, only: [:create, :destroy]
+  end
   get 'about' => 'welcome#about'
   root 'welcome#index'
 
