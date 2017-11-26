@@ -18,6 +18,7 @@ class TalesController < ApplicationController
     @tale.title = params[:tale][:title]
     @tale.body = params[:tale][:body]
     @tale.isPublic = params[:tale][:isPublic]
+    @tale.count = WordsCounted.count(@tale.body).token_count
     @tale.user = current_user
     @genre = Genre.find(params[:genre_id])
  # #35
@@ -44,6 +45,7 @@ class TalesController < ApplicationController
      @tale.title = params[:tale][:title]
      @tale.body = params[:tale][:body]
      @tale.isPublic = params[:tale][:isPublic]
+     @tale.count = WordsCounted.count(@tale.body).token_count
      
      if WordsCounted.count(@tale.body).token_count > 999
          @tale.isPublic = true

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171125193229) do
+ActiveRecord::Schema.define(version: 20171126003121) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20171125193229) do
     t.integer "genre_id"
     t.boolean "isPublic", default: false
     t.integer "user_id"
+    t.integer "count"
     t.index ["genre_id"], name: "index_tales_on_genre_id"
     t.index ["isPublic"], name: "index_tales_on_isPublic"
     t.index ["user_id"], name: "index_tales_on_user_id"

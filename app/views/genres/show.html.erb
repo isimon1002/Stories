@@ -10,7 +10,7 @@
            </h4>
            <small>
              submitted <%= time_ago_in_words(tale.created_at) %> ago by <%= tale.user.name %> <br>
-             <%= tale.comments.count %> Comments
+             This story contains <%= tale.count %> words <br> <%= tale.comments.count %> Comments
              <% end %>
            </small>
          </div>
