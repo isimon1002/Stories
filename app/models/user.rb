@@ -6,6 +6,7 @@ class User < ApplicationRecord
          
   has_many :tales, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :votes, dependent: :destroy
   
   before_save { self.role ||= :standard }
   

@@ -1,5 +1,13 @@
- <h1><%= @tale.title %></h1>
- 
+ <div>
+ <% if current_user != nil %>
+ <%= render partial: 'votes/voting', locals: { tale: @tale } %>
+ <% end %>
+ <h1><%= @tale.title %> <br>
+    <small>
+     authored by <%= @tale.user.name %>
+   </small>
+   </h1>
+ </div>
  <div class="row">
    <div class="col-md-8">
      <p><%= @tale.body %></p>
@@ -17,4 +25,15 @@
      <%= link_to "Delete Story", [@tale.genre, @tale], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete your story?'} %>
    </div>
    <% end %>
+      <div class="col-md-4">
+     <h3>
+       <%= pluralize(@tale.points, 'point') %>
+       <div>
+         <small>
+           <%= pluralize(@tale.up_votes, 'up vote') %>,
+           <%= pluralize(@tale.down_votes, 'down vote') %>
+         </small>
+       </div>
+     </h3>
+   </div>
  </div>

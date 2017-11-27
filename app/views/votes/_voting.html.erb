@@ -1,0 +1,9 @@
+<div class="vote-arrows pull-left">
+   <% if current_user != nil %>
+       <div><%= link_to " ", tale_up_vote_path(tale), class: 'glyphicon glyphicon-chevron-up', method: :post %></div>
+   <% end %>
+   <div><strong><%= tale.points %></strong></div>
+   <% if current_user != nil %>
+       <div><%= link_to " ", tale_down_vote_path(tale), class: 'glyphicon glyphicon-chevron-down', method: :post %></div>
+   <% end %>
+ </div>

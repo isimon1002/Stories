@@ -3,16 +3,21 @@
    <div class="col-md-8">
      <% @genre.tales.each do |tale| %>
        <div class="media">
+        <% if tale.isPublic? ||  current_user == tale.user %>
+        <%= render partial: 'votes/voting', locals: { tale: tale } %>
+        <% end %>
          <div class="media-body">
-           <h4 class="media-heading">
-             <% if tale.isPublic? || current_user == tale.user %>
-             <%= link_to tale.title, genre_tale_path(@genre, tale) %>
-           </h4>
+           <div>
+             <h4 class="media-heading">
+               <% if tale.isPublic? || current_user == tale.user %>
+               <%= link_to tale.title, genre_tale_path(@genre, tale) %>
+             </h4>
            <small>
              submitted <%= time_ago_in_words(tale.created_at) %> ago by <%= tale.user.name %> <br>
              This story contains <%= tale.count %> words <br> <%= tale.comments.count %> Comments
              <% end %>
            </small>
+           </div>  
          </div>
        </div>
      <% end %>

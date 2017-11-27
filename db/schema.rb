@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126003121) do
+ActiveRecord::Schema.define(version: 20171127214057) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20171126003121) do
     t.boolean "isPublic", default: false
     t.integer "user_id"
     t.integer "count"
+    t.float "rank"
     t.index ["genre_id"], name: "index_tales_on_genre_id"
     t.index ["isPublic"], name: "index_tales_on_isPublic"
     t.index ["user_id"], name: "index_tales_on_user_id"
@@ -65,6 +66,16 @@ ActiveRecord::Schema.define(version: 20171126003121) do
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "value"
+    t.integer "user_id"
+    t.integer "tale_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tale_id"], name: "index_votes_on_tale_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
 end

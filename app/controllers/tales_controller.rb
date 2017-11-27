@@ -23,7 +23,7 @@ class TalesController < ApplicationController
     @genre = Genre.find(params[:genre_id])
  # #35
      @tale.genre = @genre
-     if WordsCounted.count(@tale.body).token_count > 999
+     if WordsCounted.count(@tale.body).token_count > 3
          @tale.isPublic = true
      end
     if @tale.save
