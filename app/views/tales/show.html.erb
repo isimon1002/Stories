@@ -35,5 +35,8 @@
          </small>
        </div>
      </h3>
+     <% if current_user %>
+       <%= render partial: 'favorites/favorite', locals: { tale: @tale } %>
+     <% end %>
    </div>
  </div>

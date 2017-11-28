@@ -12,6 +12,8 @@ RSpec.describe Tale, type: :model do
    let(:user) { User.create!(name: 'name', email: 'email@email', password: 'password') }
  
    it { is_expected.to belong_to(:genre) }
+   it { is_expected.to have_many(:favorites) }
+   it { is_expected.to have_many(:votes) }
  
  # #2
    describe "attributes" do

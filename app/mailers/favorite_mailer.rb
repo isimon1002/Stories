@@ -1,8 +1,7 @@
-class ApplicationMailer < ActionMailer::Base
-  default from: 'ijsimon@sbcglobal.net'
-  layout 'mailer'
-  
-  def new_comment(user, tale, comment)
+class FavoriteMailer < ApplicationMailer
+    default from: 'Storytime@flph822.prodigy.net'
+    
+    def new_comment(user, tale, comment)
  
  # #18
      headers["Message-ID"] = "<comments/#{comment.id}@StoryTime.com>"

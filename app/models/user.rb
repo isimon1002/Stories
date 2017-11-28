@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :tales, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   
   before_save { self.role ||= :standard }
   
@@ -17,5 +18,9 @@ class User < ApplicationRecord
    def avatar_url(user)
      gravatar_id = Digest::MD5::hexdigest(user.email).downcase
      "http://gravatar.com/avatar/#{gravatar_id}.png?s=48"
+   end
+   
+   def favorite_for(tale)
+     favorites.where(tale_id: tale.id).first
    end
 end

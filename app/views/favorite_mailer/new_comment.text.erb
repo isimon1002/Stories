@@ -1,0 +1,8 @@
+ New comment to "<%= @tale.title %>"
+ <%= "=" * (@tale.title.length + 12) %>
+ 
+ By: <%= @comment.user.name %>
+ 
+ <%= @comment.body %>
+ 
+ Visit online at: <%= genre_tale_url(@tale.genre, @tale, anchor: "comment-#{@comment.id}") %>

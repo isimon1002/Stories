@@ -9,6 +9,18 @@
 
  require 'random_data'
  
+  # Create Users
+ 5.times do
+   User.create!(
+ # #3
+   name:     RandomData.random_name,
+   email:    RandomData.random_email,
+   password: RandomData.random_sentence
+   )
+ end
+ users = User.all
+ 
+  # Create Genre
 1.times  do
 Genre.create!(name: 'Comedy', description: 'Funny stories.')
 Genre.create!(name: 'Fantasy', description: 'Stories that take place in a different universe with different rules.')
@@ -26,7 +38,31 @@ Genre.create!(name: 'Tragedy', description: ' Sad stories, or stories with sad e
 end
 genres = Genre.all
 
+ # Create Stories
+ 25.times do
+   tale = Tale.create!(
+     user:   users.sample,
+     genre:  genres.sample,
+     title:  RandomData.random_sentence,
+     body:   RandomData.random_sentence + RandomData.random_sentence
+   )
+   
+   tale.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+ # #13
+   rand(1..5).times { tale.votes.create!(value: [-1, 1].sample, user: users.sample) }
+ end
+ tales = Tale.all
 
+ # Create Comments
+ 50.times do
+   Comment.create!(
+     user: users.sample,
+     tale: tales.sample,
+     body: RandomData.random_paragraph
+   )
+  end
+  
+ 
  puts "Seed finished"
  puts "#{User.count} users created"
  puts "#{Genre.count} genres created"
