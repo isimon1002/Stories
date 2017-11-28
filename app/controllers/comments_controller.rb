@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
  # #12
        redirect_to [@tale.genre, @tale]
      else
-       flash[:alert] = "Comment failed to save.  Please contact ijsimon@sbcglobal.net if this problem persits."
+       flash[:alert] = "Comment failed to save.  Please contact storytime1002@gmail.com if this problem persits."
  # #13
        redirect_to [@tale.genre, @tale]
      end
@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
        flash[:notice] = "Comment was deleted."
        redirect_to [@tale.genre, @tale]
      else
-       flash[:alert] = "Comment couldn't be deleted. If this problem persists contact ijsimon@sbcglobal.net"
+       flash[:alert] = "Comment couldn't be deleted. If this problem persists contact storytime1002@gmail.com."
        redirect_to [@tale.genre, @tale]
      end
    end

@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
      if favorite.save
        flash[:notice] = "Story favorited."
      else
-       flash[:alert] = "Favoriting failed."
+       flash[:alert] = "Favoriting failed.  If this problem persists contact storytime1002@gmail.com."
      end
  
  # #13
@@ -23,7 +23,7 @@ class FavoritesController < ApplicationController
      if favorite.destroy
        flash[:notice] = "Story unfavorited."
      else
-       flash[:alert] = "Unfavoriting failed."
+       flash[:alert] = "Unfavoriting failed.  If this problem persists contact storytime1002@gmail.com."
      end
        redirect_to [tale.genre, tale]
    end

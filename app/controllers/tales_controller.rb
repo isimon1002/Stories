@@ -31,7 +31,7 @@ class TalesController < ApplicationController
        
        redirect_to [@genre, @tale]
     else
-       flash.now[:alert] = "There was an error saving your story.  Please try again later.  If the problem persists, please notify tech support at ijsimon@sbcglobal.net."
+       flash.now[:alert] = "There was an error saving your story.  Please try again later.   If this problem persists contact storytime1002@gmail.com."
        render :new
     end
   end
