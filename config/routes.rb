@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
+  resources :profile, only: [:show]
   resources :welcome
   resources :genres, only: [:index, :show] do
       resources :tales, except: [:index]

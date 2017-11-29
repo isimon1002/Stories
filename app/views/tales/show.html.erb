@@ -4,7 +4,7 @@
  <% end %>
  <h1><%= @tale.title %> <br>
     <small>
-     authored by <%= @tale.user.name %>
+     authored by <%= link_to @tale.user.name, profile_path(@tale.user.id) %>
    </small>
    </h1>
  </div>

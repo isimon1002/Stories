@@ -1,7 +1,7 @@
 class TalesController < ApplicationController
   
   before_action :user_nil, except: :show
-  before_action :authorize_edit, except: [:show, :new, :create]
+  before_action :authorize_edit, except: [:show, :new, :create, :confirm]
   before_action :authorize_new, except: [:show, :edit]
   
   def show
@@ -13,6 +13,14 @@ class TalesController < ApplicationController
     @tale = Tale.new
   end
 
+  def confirm
+     @tale = Tale.find(params[:id])
+     @tale.title = params[:tale][:title]
+     @tale.body = params[:tale][:body]
+     @tale.isPublic = params[:tale][:isPublic]
+     @tale.count = WordsCounted.count(@tale.body).token_count
+  end
+ 
   def create
     @tale = Tale.new
     @tale.title = params[:tale][:title]
@@ -23,7 +31,7 @@ class TalesController < ApplicationController
     @genre = Genre.find(params[:genre_id])
  # #35
      @tale.genre = @genre
-     if WordsCounted.count(@tale.body).token_count > 3
+     if WordsCounted.count(@tale.body).token_count > 999
          @tale.isPublic = true
      end
     if @tale.save
@@ -46,10 +54,7 @@ class TalesController < ApplicationController
      @tale.body = params[:tale][:body]
      @tale.isPublic = params[:tale][:isPublic]
      @tale.count = WordsCounted.count(@tale.body).token_count
-     
-     if WordsCounted.count(@tale.body).token_count > 999
-         @tale.isPublic = true
-     end
+
      if WordsCounted.count(@tale.body).token_count < 999
          @tale.isPublic = false
      end

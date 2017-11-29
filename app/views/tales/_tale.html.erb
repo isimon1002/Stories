@@ -1,0 +1,16 @@
+<% if tale.isPublic? || current_user == tale.user %>
+ <div class="media">
+   <%= render partial: 'votes/voting', locals: { tale: tale } %>
+   <div class="media-body">
+     <h4 class="media-heading">
+
+       <%= link_to tale.title, genre_tale_path(tale.genre, tale) %>
+
+     </h4>
+     <small>
+       submitted <%= time_ago_in_words(tale.created_at) %> ago by <%= tale.user.name %> <br>
+       <%= tale.comments.count %> Comments
+     </small>
+   </div>
+ </div>
+ <% end %>

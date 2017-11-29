@@ -13,7 +13,7 @@
                <%= link_to tale.title, genre_tale_path(@genre, tale) %>
              </h4>
            <small>
-             submitted <%= time_ago_in_words(tale.created_at) %> ago by <%= tale.user.name %> <br>
+             submitted <%= time_ago_in_words(tale.created_at) %> ago by <%= link_to tale.user.name, profile_path(tale.user.id) %> <br>
              This story contains <%= tale.count %> words <br> <%= tale.comments.count %> Comments
              <% end %>
            </small>
