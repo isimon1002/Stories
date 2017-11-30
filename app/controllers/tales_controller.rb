@@ -13,14 +13,6 @@ class TalesController < ApplicationController
     @tale = Tale.new
   end
 
-  def confirm
-     @tale = Tale.find(params[:id])
-     @tale.title = params[:tale][:title]
-     @tale.body = params[:tale][:body]
-     @tale.isPublic = params[:tale][:isPublic]
-     @tale.count = WordsCounted.count(@tale.body).token_count
-  end
- 
   def create
     @tale = Tale.new
     @tale.title = params[:tale][:title]
@@ -31,8 +23,8 @@ class TalesController < ApplicationController
     @genre = Genre.find(params[:genre_id])
  # #35
      @tale.genre = @genre
-     if WordsCounted.count(@tale.body).token_count > 999
-         @tale.isPublic = true
+     if WordsCounted.count(@tale.body).token_count < 999
+         @tale.isPublic = false
      end
     if @tale.save
        flash[:notice] = "Your story was saved.  Thank you for sharing it with the world."
