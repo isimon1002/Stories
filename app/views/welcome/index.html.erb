@@ -1,17 +1,3 @@
- <div class="jumbotron home">
-   <h1>Story Time</h1>
-   <p>The best place on the internet to read and share stories!</p>
-   <p>
-       <% if user_signed_in? %>
-           Thank you for signing in <%= current_user.name %>!
-       <% else %>
-
-           <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> -
-           <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %>
-      <% end %> 
-   </p>
- </div>
-
    <h1 class="middle">The beginning of three amazing stories.  Click on the link to read the rest.</h1>
  <div class="row">
    <div class="col-md-4">
