@@ -23,3 +23,15 @@
   .headers .navbar-linkl {float: left;
    margin: 2px;
   }
+  
+  @media (min-width: 800px) {
+  body {
+    padding: 60px;
+  }
+}
+
+  @media (max-width: 800px) {
+  body {
+    padding: 30px;
+  }
+}
