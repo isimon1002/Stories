@@ -9,6 +9,14 @@ color: red;
 .home h1, .home h2, .home p{text-align: center;
 }
 
-.main, .headers {margin-left: 60px;
-margin-right: 60px;
+  @media (min-width: 800px) {
+    .main, .headers {margin-left: 60px;
+    margin-right: 60px;
+    }
+}
+
+  @media (max-width: 800px) {
+    .main, .headers {margin-left: 30px;
+    margin-right: 30px;
+    }
 }
