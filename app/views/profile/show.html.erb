@@ -35,6 +35,16 @@
  
 
  <h2>Stories</h2>
- <%= render @user.tales %>
- </div>
+    <% @user.tales.each do |tale| %>
+        <h4 class="media-heading">
+            <% if tale.isPublic? || current_user == tale.user %>
+               <%= link_to tale.title, genre_tale_path(@genre, tale) %>
+        </h4>
+        <small>
+                 submitted <%= time_ago_in_words(tale.created_at) %> ago<br>
+                 This story contains <%= tale.count %> words <br> <%= tale.comments.count %> Comments <br>
+             <% end %>
+        </small>
+    <% end %>
+
  
