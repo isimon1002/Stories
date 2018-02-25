@@ -9,14 +9,6 @@
        <li>Please do not post stories that are not yours.  Plagiarizers will have their accounts deleted.</li>
        <li>Please post your story in the correct genre.</li>
        <li>Please only post high-quality stories.  If an author repeatedly posts low quality stories their account will be downgraded to standard and will no longer be able to share stories. The quality of stories is determined by up and down votes.  </li>
-       <% if @genre.name != "Short" %>
-       <li>Please only post stories that are at least 1000 words.  There is no maximum size.</li>
-       <li>Please remember that even if you check the make public box, if your story contains fewer than 1000 words your story will remain private.</li>
-       <% end %>
-        <% if @genre.name == "Short" %>
-       <li>Please only post stories that contain fewer than 1000 words.</li>
-       <li>Please remember that even if you check the make public box, if your story contains more than 1000 words your story will remain private.</li>
-       <% end %>
      </ul>
    </div>
    <div class="col-md-8">

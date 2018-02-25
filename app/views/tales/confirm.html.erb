@@ -1,6 +1,0 @@
-<h1>Do you want your story to be Public</h1>
-     <%= form_for [@genre, @tale] do |f| %>
-           <%= f.label 'Make your story public' %>
-           <%= f.check_box :isPublic, class: 'checkbox' %>
-         <%= f.submit "Save", class: 'btn btn-success' %>
-     <% end %>

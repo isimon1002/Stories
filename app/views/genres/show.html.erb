@@ -1,20 +1,4 @@
-     <div class="headers">
-        <% if user_signed_in? %>
-           <%= image_tag current_user.avatar_url(current_user), :class => 'navbar-link' %> <%= link_to "Home", welcome_index_path, :class => 'navbar-linkl' %> <strong class='navbar-link'>Signed in as: <%= current_user.name %></strong>
-           <%= link_to 'Your Profile', profile_path(current_user), :class => 'navbar-link' %> <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> <%= link_to "About", about_path, :class => 'navbar-linkl'  %> <%= link_to "FAQ", faq_path, :class => 'navbar-linkl' %>
-       <% else %>
-            <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %>  <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %> <%= link_to "Home", welcome_index_path, :class => 'navbar-linkl' %> <%= link_to "About", about_path, :class => 'navbar-linkl'  %> <%= link_to "FAQ", faq_path, :class => 'navbar-linkl' %> 
-      <% end %>
-      </div>
-  <div class="jumbotron home">
-   <h1>Story Time</h1>
-   <p class="main">The best place on the internet to read and share stories!</p>
-   <p class="main">
-      <br>
-      <%= link_to "Comedy", genre_path(1), :class => 'navbar-link'  %> <%= link_to "Fantasy", genre_path(2), :class => 'navbar-link'  %> <%= link_to "Historical Fiction", genre_path(3), :class => 'navbar-link'  %> <%= link_to "Horror", genre_path(4), :class => 'navbar-link'  %> <%= link_to "Mystery", genre_path(5), :class => 'navbar-link'  %> <%= link_to "Mythology", genre_path(6), :class => 'navbar-link'  %> <%= link_to "Nonfiction", genre_path(7), :class => 'navbar-link'  %> <%= link_to "R-rated", genre_path(8), :class => 'navbar-link'  %> <%= link_to "Realistic Fiction", genre_path(9), :class => 'navbar-link'  %> <%= link_to "Romance", genre_path(10), :class => 'navbar-link'  %> <%= link_to "Satire", genre_path(11), :class => 'navbar-link'  %> <%= link_to "Science Fiction", genre_path(12), :class => 'navbar-link'  %> <%= link_to "Short", genre_path(14), :class => 'navbar-link' %> <%= link_to "Tragedy", genre_path(13), :class => 'navbar-link'  %>
-   </p>
- </div>
- </div>
+<%= render partial: 'layouts/header' %>
  <div class="main">
  <h1><%= @genre.name %></h1>
  <p><%= @genre.description %></p>

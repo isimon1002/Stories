@@ -23,16 +23,6 @@ class TalesController < ApplicationController
     @genre = Genre.find(params[:genre_id])
  # #35
     @tale.genre = @genre
-    if @genre.name != "Short"
-      if WordsCounted.count(@tale.body).token_count < 999
-        @tale.isPublic = false
-      end
-    end
-    if @genre.name == "Short"
-      if WordsCounted.count(@tale.body).token_count > 999
-        @tale.isPublic = false
-      end
-    end
     if @tale.save
        flash[:notice] = "Your story was saved.  Thank you for sharing it with the world."
        
@@ -55,17 +45,6 @@ class TalesController < ApplicationController
      @tale.isPublic = params[:tale][:isPublic]
      @tale.count = WordsCounted.count(@tale.body).token_count
      @tale.genre = @genre
-
-     if @genre.name != "Short"
-       if WordsCounted.count(@tale.body).token_count < 999
-         @tale.isPublic = false
-       end
-     end
-     if @genre.name == "Short"
-       if WordsCounted.count(@tale.body).token_count > 999
-         @tale.isPublic = false
-       end
-     end
      if @tale.save
        flash[:notice] = "Your story was updated.  Thank you for updating it."
        redirect_to [@tale.genre, @tale]
