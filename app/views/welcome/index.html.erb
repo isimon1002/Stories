@@ -1,36 +1,35 @@
-            <div class="headers">
-        <% if user_signed_in? %>
-           <%= image_tag current_user.avatar_url(current_user), :class => 'navbar-link' %> <%= link_to "Home", welcome_index_path, :class => 'navbar-linkl' %> <strong class='navbar-link'>Signed in as: <%= current_user.name %></strong>
-           <%= link_to 'Your Profile', profile_path(current_user), :class => 'navbar-link' %> <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> <%= link_to "About", about_path, :class => 'navbar-linkl'  %> <%= link_to "FAQ", faq_path, :class => 'navbar-linkl' %>
-       <% else %>
-            <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %>  <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %> <%= link_to "Home", welcome_index_path, :class => 'navbar-linkl' %> <%= link_to "About", about_path, :class => 'navbar-linkl'  %> <%= link_to "FAQ", faq_path, :class => 'navbar-linkl' %> 
-      <% end %>
-      </div>
-  <div class="jumbotron home">
+<div class="headers">
+    <% if user_signed_in? %>
+       <%= image_tag current_user.avatar_url(current_user), :class => 'navbar-link' %> <%= link_to "Home", welcome_index_path, :class => 'navbar-linkl' %> <strong class='navbar-link'>Signed in as: <%= current_user.name %></strong>
+       <%= link_to 'Your Profile', profile_path(current_user), :class => 'navbar-link' %> <%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> <%= link_to "About", about_path, :class => 'navbar-linkl'  %> <%= link_to "FAQ", faq_path, :class => 'navbar-linkl' %>
+    <% else %>
+       <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %>  <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link'  %> <%= link_to "Home", welcome_index_path, :class => 'navbar-linkl' %> <%= link_to "About", about_path, :class => 'navbar-linkl'  %> <%= link_to "FAQ", faq_path, :class => 'navbar-linkl' %> 
+    <% end %>
+</div>
+<div class="jumbotron home">
    <h1>Story Time</h1>
    <p class="main">The best place on the internet to read and share stories!</p>
    <p class="main">
-      <br>
+   <br>
       <%= link_to "Comedy", genre_path(1), :class => 'navbar-link'  %> <%= link_to "Fantasy", genre_path(2), :class => 'navbar-link'  %> <%= link_to "Historical Fiction", genre_path(3), :class => 'navbar-link'  %> <%= link_to "Horror", genre_path(4), :class => 'navbar-link'  %> <%= link_to "Mystery", genre_path(5), :class => 'navbar-link'  %> <%= link_to "Mythology", genre_path(6), :class => 'navbar-link'  %> <%= link_to "Nonfiction", genre_path(7), :class => 'navbar-link'  %> <%= link_to "R-rated", genre_path(8), :class => 'navbar-link'  %> <%= link_to "Realistic Fiction", genre_path(9), :class => 'navbar-link'  %> <%= link_to "Romance", genre_path(10), :class => 'navbar-link'  %> <%= link_to "Satire", genre_path(11), :class => 'navbar-link'  %> <%= link_to "Science Fiction", genre_path(12), :class => 'navbar-link'  %>  <%= link_to "Short", genre_path(14), :class => 'navbar-link' %> <%= link_to "Tragedy", genre_path(13), :class => 'navbar-link'  %>
    </p>
- </div>
- </div>
- <div class="main">
-   <h1 class="middle">The beginning of three amazing stories.  Click on the link to read the rest.</h1>
- <div class="row">
-    <div class="col-md-4">
-     <h3>Sympathy for the Devil by <%= link_to "Isaac Simon", profile_path(1), :class => 'navbar-link'  %></h3>
-     <p>You may know me by one of my many names such as Lucifer, Satan, or the Devil and this is my story. <%= link_to "Continue", genre_tale_path(6, 2), :class => 'navbar-link'  %></p>
-   </div>
-   <div class="col-md-4">
-     <h3>An exchange of hearts by <%= link_to "Luther Taken Alive", profile_path(2), :class => 'navbar-link' %></h3>
-     <p>They say love can make the wisest of men into fools... 
-        That love can shake you to your core, melt you at a look, and write a whole other life for you. Being in love makes you almost invincible, you can do anything because you’ll always have somewhere to leave your heart. A message from the one you love can send your heart racing, smile wide, and can calm the worst in you. Love can build you, Love can break you; you showed me this. 
-        So, when I heard my first love story, I knew I had to find you.  <%= link_to "Continue", genre_tale_path(10, 4), :class => 'navbar-link'  %></p>
-   </div>
-   <div class="col-md-4">
-     <h3>A Pair to Forever by <%= link_to "Luther Taken Alive", profile_path(2), :class => 'navbar-link' %></h3>
-     <p>All it was, all that could, all that is rushed to me in seconds. “Hi,” She stood behind the counter as if nothing had happened, it was a single moment dedicated to this being, this person, this… woman.  <%= link_to "Continue", genre_tale_path(9, 6), :class => 'navbar-link'  %></p>
-   </div>
- </div>
+</div>
+<div class="main">
+    <h1 class="middle">The beginning of three amazing stories.  Click on the link to read the rest.</h1>
+    <div class="row">
+        <div class="col-md-4">
+             <h3>Sympathy for the Devil by <%= link_to "Isaac Simon", profile_path(1), :class => 'navbar-link'  %></h3>
+             <p>You may know me by one of my many names such as Lucifer, Satan, or the Devil and this is my story. <%= link_to "Continue", genre_tale_path(6, 2), :class => 'navbar-link'  %></p>
+        </div>
+        <div class="col-md-4">
+            <h3>An exchange of hearts by <%= link_to "Luther Taken Alive", profile_path(2), :class => 'navbar-link' %></h3>
+             <p>They say love can make the wisest of men into fools... 
+                That love can shake you to your core, melt you at a look, and write a whole other life for you. Being in love makes you almost invincible, you can do anything because you’ll always have somewhere to leave your heart. A message from the one you love can send your heart racing, smile wide, and can calm the worst in you. Love can build you, Love can break you; you showed me this. 
+                So, when I heard my first love story, I knew I had to find you.  <%= link_to "Continue", genre_tale_path(10, 4), :class => 'navbar-link'  %></p>
+        </div>
+        <div class="col-md-4">
+            <h3>A Pair to Forever by <%= link_to "Luther Taken Alive", profile_path(2), :class => 'navbar-link' %></h3>
+            <p>All it was, all that could, all that is rushed to me in seconds. “Hi,” She stood behind the counter as if nothing had happened, it was a single moment dedicated to this being, this person, this… woman.  <%= link_to "Continue", genre_tale_path(9, 6), :class => 'navbar-link'  %></p>
+        </div>
+    </div>
  </div>
